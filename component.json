@@ -1,0 +1,238 @@
+{
+    "title": "Power BI Embedded Management Client",
+    "description": "Client to manage your Power BI Embedded workspace collections and retrieve workspaces.",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/azure.com/powerbiembedded/2016-01-29/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://management.azure.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "getAvailableOperations": {
+            "main": "./lib/actions/getAvailableOperations.js",
+            "title": "Indicates which operations can be performed by the Power BI Resource Provider.",
+            "description": "Indicates which operations can be performed by the Power BI Resource Provider.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getAvailableOperations.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "WorkspaceCollections_checkNameAvailability": {
+            "main": "./lib/actions/WorkspaceCollections_checkNameAvailability.js",
+            "title": "Verify the specified Power BI Workspace Collection name is valid and not already in use.",
+            "description": "Verify the specified Power BI Workspace Collection name is valid and not already in use.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/WorkspaceCollections_checkNameAvailability.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "WorkspaceCollections_listBySubscription": {
+            "main": "./lib/actions/WorkspaceCollections_listBySubscription.js",
+            "title": "Retrieves all existing Power BI workspace collections in the specified subscription.",
+            "description": "Retrieves all existing Power BI workspace collections in the specified subscription.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/WorkspaceCollections_listBySubscription.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "WorkspaceCollections_migrate": {
+            "main": "./lib/actions/WorkspaceCollections_migrate.js",
+            "title": "Migrates an existing Power BI Workspace Collection to a different resource group and/or subscription.",
+            "description": "Migrates an existing Power BI Workspace Collection to a different resource group and/or subscription.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/WorkspaceCollections_migrate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "WorkspaceCollections_listByResourceGroup": {
+            "main": "./lib/actions/WorkspaceCollections_listByResourceGroup.js",
+            "title": "Retrieves all existing Power BI workspace collections in the specified resource group.",
+            "description": "Retrieves all existing Power BI workspace collections in the specified resource group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/WorkspaceCollections_listByResourceGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "WorkspaceCollections_delete": {
+            "main": "./lib/actions/WorkspaceCollections_delete.js",
+            "title": "Delete a Power BI Workspace Collection.",
+            "description": "Delete a Power BI Workspace Collection.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/WorkspaceCollections_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "WorkspaceCollections_getByName": {
+            "main": "./lib/actions/WorkspaceCollections_getByName.js",
+            "title": "Retrieves an existing Power BI Workspace Collection.",
+            "description": "Retrieves an existing Power BI Workspace Collection.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/WorkspaceCollections_getByName.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "WorkspaceCollections_update": {
+            "main": "./lib/actions/WorkspaceCollections_update.js",
+            "title": "Update an existing Power BI Workspace Collection with the specified properties.",
+            "description": "Update an existing Power BI Workspace Collection with the specified properties.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/WorkspaceCollections_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "WorkspaceCollections_create": {
+            "main": "./lib/actions/WorkspaceCollections_create.js",
+            "title": "Creates a new Power BI Workspace Collection with the specified properties. A Power BI Workspace Collection contains one or more workspaces, and can be used to provision keys that provide API access to those workspaces.",
+            "description": "Creates a new Power BI Workspace Collection with the specified properties. A Power BI Workspace Collection contains one or more workspaces, and can be used to provision keys that provide API access to those workspaces.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/WorkspaceCollections_create.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "WorkspaceCollections_getAccessKeys": {
+            "main": "./lib/actions/WorkspaceCollections_getAccessKeys.js",
+            "title": "Retrieves the primary and secondary access keys for the specified Power BI Workspace Collection.",
+            "description": "Retrieves the primary and secondary access keys for the specified Power BI Workspace Collection.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/WorkspaceCollections_getAccessKeys.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "WorkspaceCollections_regenerateKey": {
+            "main": "./lib/actions/WorkspaceCollections_regenerateKey.js",
+            "title": "Regenerates the primary or secondary access key for the specified Power BI Workspace Collection.",
+            "description": "Regenerates the primary or secondary access key for the specified Power BI Workspace Collection.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/WorkspaceCollections_regenerateKey.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Workspaces_List": {
+            "main": "./lib/actions/Workspaces_List.js",
+            "title": "Retrieves all existing Power BI workspaces in the specified workspace collection.",
+            "description": "Retrieves all existing Power BI workspaces in the specified workspace collection.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Workspaces_List.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

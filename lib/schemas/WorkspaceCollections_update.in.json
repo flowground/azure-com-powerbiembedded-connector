@@ -1,0 +1,63 @@
+{
+    "type": "object",
+    "properties": {
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "resourceGroupName": {
+            "required": true,
+            "type": "string"
+        },
+        "workspaceCollectionName": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "sku": {
+                    "properties": {
+                        "name": {
+                            "description": "SKU name",
+                            "enum": [
+                                "S1"
+                            ],
+                            "type": "string",
+                            "x-ms-enum": {
+                                "modelAsString": true,
+                                "name": "AzureSkuName"
+                            }
+                        },
+                        "tier": {
+                            "description": "SKU tier",
+                            "enum": [
+                                "Standard"
+                            ],
+                            "type": "string",
+                            "x-ms-enum": {
+                                "modelAsString": true,
+                                "name": "AzureSkuTier"
+                            }
+                        }
+                    },
+                    "required": [
+                        "name",
+                        "tier"
+                    ],
+                    "type": "object"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

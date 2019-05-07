@@ -1,0 +1,32 @@
+{
+    "type": "object",
+    "properties": {
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "resourceGroupName": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "resources": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "targetResourceGroup": {
+                    "description": "Name of the resource group the Power BI workspace collections will be migrated to.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

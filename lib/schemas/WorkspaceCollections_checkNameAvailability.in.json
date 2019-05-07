@@ -1,0 +1,31 @@
+{
+    "type": "object",
+    "properties": {
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "location": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "name": {
+                    "description": "Workspace collection name",
+                    "type": "string"
+                },
+                "type": {
+                    "default": "Microsoft.PowerBI/workspaceCollections",
+                    "description": "Resource type",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}
